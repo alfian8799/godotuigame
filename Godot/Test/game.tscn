@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://db8haq3jmn8qt"]
+
+[ext_resource type="Texture2D" uid="uid://bt786g1o6wi4i" path="res://uigame/Background.png" id="1_viyxb"]
+[ext_resource type="FontFile" uid="uid://dc7rpxi1bjtqp" path="res://uigame/LilitaOne-Regular.ttf" id="2_2ak3c"]
+[ext_resource type="Script" path="res://Main Menu.gd" id="2_q3puy"]
+
+[node name="Game" type="Node"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Main Menu" type="Control" parent="."]
+layout_mode = 3
+anchor_left = -0.00607639
+anchor_right = 0.993924
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_q3puy")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.993
+anchor_bottom = 1.0
+offset_right = 4.06348
+offset_bottom = -2.0
+texture = ExtResource("1_viyxb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -137.0
+offset_right = 176.0
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="Main Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_2ak3c")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Setting" type="Button" parent="Main Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2ak3c")
+theme_override_font_sizes/font_size = 30
+text = "Setting"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="Main Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2ak3c")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Main Menu/VBoxContainer/Start" to="Main Menu" method="_on_start_pressed"]
